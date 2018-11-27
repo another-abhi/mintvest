@@ -16,12 +16,7 @@
   margin-left: 60%;
   margin-top: 0%;
 }
-.custom-button {
-  margin-left: 30%;
-  margin-top: 30%;
-}
 
-.modal-div {
-  padding-left: 30%;
-  padding-top: 30%;
+.Product-button {
+  float: right;
 }
