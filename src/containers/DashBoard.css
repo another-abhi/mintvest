@@ -12,6 +12,10 @@
   color: #999;
 }
 
+.BG {
+  background-image: "../static/images/finapp.jpg";
+}
+
 .custom-modal {
   margin-left: 60%;
   margin-top: 0%;
