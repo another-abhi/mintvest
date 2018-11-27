@@ -50,7 +50,9 @@ export default class DashBoard extends Component {
           >
             <Modal.Header closeButton>
               <Modal.Title>Invest Now!</Modal.Title>
-              <Button onClick={this.handleGo}>GO!!!!</Button>
+              <Button bsStyle="info" onClick={this.handleGo}>
+                GO!!!!
+              </Button>
             </Modal.Header>
             <Modal.Body>
               <h4>You could be making more</h4>
