@@ -25,16 +25,16 @@ class SimpleSlider extends React.Component {
 
   handleChange = (event, value) => {
     let pic = Product1;
-    if (value >= 2000) {
+    if (value >= 1000) {
       pic = "";
     }
-    if (value > 4000) {
+    if (value >= 2000) {
       pic = Product1;
     }
-    if (value > 6000) {
+    if (value >= 10000) {
       pic = Product2;
     }
-    if (value > 8000) {
+    if (value >= 20000) {
       pic = Product3;
     }
     this.setState({ value: value, picture: pic });

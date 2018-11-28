@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  Modal,
-  Button,
-  OverlayTrigger,
-  Popover,
-  Tooltip
-} from "react-bootstrap";
+import { Modal, Button, Popover, Tooltip } from "react-bootstrap";
 import "./Finapp.css";
 
 import finapp from "../static/images/finapp.jpg";

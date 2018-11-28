@@ -28,8 +28,8 @@ export default class Finapp extends Component {
       show: true,
       currentValue: 50,
       step: 2,
-      max: 10000,
-      min: 2000
+      max: 25000,
+      min: 1000
     };
   }
 
@@ -38,7 +38,7 @@ export default class Finapp extends Component {
   };
   handleGo = () => {
     this.setState({ show: false });
-    this.props.history.push("/MintVest");
+    this.props.history.push("/ClientPortal");
   };
   handleShow = () => {
     this.setState({ show: true });
@@ -91,7 +91,7 @@ export default class Finapp extends Component {
           </Modal>
 
           <div className="lander">
-            <h1>Finapp Client Landing Page</h1>
+            <h1>SpentAnalayser Client Landing Page</h1>
             <p>
               {console.log(this.props.currentUser)}
               This will be the dashboard of a logged in user with various
