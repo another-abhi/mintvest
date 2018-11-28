@@ -1,0 +1,31 @@
+.DashBoard .lander {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.DashBoard .lander h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.DashBoard .lander p {
+  color: #999;
+}
+
+.BG {
+  background-image: "../static/images/finapp.jpg";
+}
+
+.custom-modal {
+  margin-left: 60%;
+  margin-top: 0%;
+}
+.custom-button {
+  margin-left: 30%;
+  margin-top: 30%;
+}
+
+.modal-div {
+  padding-left: 30%;
+  padding-top: 30%;
+}

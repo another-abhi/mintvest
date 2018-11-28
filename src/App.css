@@ -5,3 +5,6 @@
 .App .navbar-brand {
   font-weight: bold;
 }
+.BG {
+  background-image: "../static/images/finapp.jpg";
+}

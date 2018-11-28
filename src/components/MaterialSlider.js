@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/lab/Slider";
+import { Image, Panel } from "react-bootstrap";
+import Product1 from "../static/images/Product1.png";
+import Product2 from "../static/images/Product 2.png";
+import Product3 from "../static/images/Product 3.png";
 
 const styles = {
   root: {
@@ -15,11 +19,25 @@ const styles = {
 
 class SimpleSlider extends React.Component {
   state = {
-    value: 50
+    value: 50,
+    picture: ""
   };
 
   handleChange = (event, value) => {
-    this.setState({ value });
+    let pic = Product1;
+    if (value >= 2000) {
+      pic = "";
+    }
+    if (value > 4000) {
+      pic = Product1;
+    }
+    if (value > 6000) {
+      pic = Product2;
+    }
+    if (value > 8000) {
+      pic = Product3;
+    }
+    this.setState({ value: value, picture: pic });
   };
 
   render() {
@@ -28,7 +46,15 @@ class SimpleSlider extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Typography variant="h2" id="label">
+        <Panel bsStyle="primary">
+          <Panel.Heading>
+            <Panel.Title componentClass="h3">Try Moving the Slider</Panel.Title>
+          </Panel.Heading>
+          <Panel.Body>
+            <Image src={this.state.picture} responsive />
+          </Panel.Body>
+        </Panel>
+        <Typography variant="h3" id="label">
           Your Investment
         </Typography>
         <Slider
@@ -38,7 +64,7 @@ class SimpleSlider extends React.Component {
           onChange={this.handleChange}
           max={this.props.max}
           min={this.props.min}
-          step={100}
+          step={500}
         />
 
         <Typography variant="h4" id="label">

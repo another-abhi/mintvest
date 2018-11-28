@@ -6,6 +6,7 @@ import Login from "./containers/Login";
 import AppliedRoute from "./components/AppliedRoute";
 import Dashboard from "./containers/DashBoard";
 import MintVest from "./containers/MintVest";
+import Finapp from "./containers/Finapp";
 
 export default ({ childProps }) => (
   <Switch>
@@ -14,7 +15,7 @@ export default ({ childProps }) => (
     <AppliedRoute
       path="/DashBoard"
       exact
-      component={Dashboard}
+      component={Finapp}
       props={childProps}
     />
     <AppliedRoute
