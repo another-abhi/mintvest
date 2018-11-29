@@ -153,7 +153,7 @@ export default class DashBoard extends Component {
               bsSize="lg"
             >
               <Modal.Header closeButton>
-                <Modal.Title>recomended Investment</Modal.Title>
+                <Modal.Title>Reccomended Investment</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Panel bsStyle="success">
