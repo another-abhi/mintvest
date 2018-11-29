@@ -89,7 +89,7 @@ export default class Finapp extends Component {
           </Modal>
 
           <div className="lander">
-            <h1>SpentAnalayser Client Landing Page</h1>
+            <h1>Spend Analayser Client Landing Page</h1>
             <p>
               {console.log(this.props.currentUser)}
               This will be the dashboard of a logged in user with various
