@@ -77,7 +77,6 @@ export default class DashBoard extends Component {
               {console.log(this.props.currentUser)}
               Client Portal Landing Page
             </p>
-            <h4>{this.props.currentUser.name}</h4>
           </div>
           <div />
           {this.state.show === true && (
