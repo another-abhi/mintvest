@@ -19,7 +19,7 @@ const styles = {
 
 class SimpleSlider extends React.Component {
   state = {
-    value: 50,
+    value: 2000,
     picture: ""
   };
 

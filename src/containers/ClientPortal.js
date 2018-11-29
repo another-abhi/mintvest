@@ -8,7 +8,10 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   Panel,
-  Image
+  Image,
+  Grid,
+  Row,
+  Col
 } from "react-bootstrap";
 
 import { Input, Container } from "mdbreact";
@@ -16,6 +19,16 @@ import "./ClientPortal.css";
 
 import finapp from "../static/images/finapp.jpg";
 import recommendation from "../static/images/Recommendation.png";
+import accountSetup from "../static/images/AccountSetup.png";
+
+import last from "../static/images/last.jpg";
+
+import paperwork from "../static/images/paperwork.png";
+
+import cp1 from "../static/images/cp1.png";
+import cp2 from "../static/images/cp2.png";
+import cp3 from "../static/images/cp3.png";
+import cp4 from "../static/images/cp4.png";
 
 export default class DashBoard extends Component {
   constructor(props) {
@@ -27,6 +40,18 @@ export default class DashBoard extends Component {
       radio: 2
     };
   }
+  handleEnd = () => {
+    this.setState({ last: false });
+  };
+  handleLast = () => {
+    this.setState({ paperwork: false, last: true });
+  };
+  handlePaperwork = () => {
+    this.setState({ accountSetup: false, paperwork: true });
+  };
+  handleAccountSetup = () => {
+    this.setState({ recomend: false, accountSetup: true });
+  };
   handleRecomend = () => {
     this.setState({ show: false, recomend: true });
   };
@@ -54,9 +79,6 @@ export default class DashBoard extends Component {
             </p>
             <h4>{this.props.currentUser.name}</h4>
           </div>
-          <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-            Learning Centre
-          </Button>
           <div />
           {this.state.show === true && (
             <Modal show={this.state.show} onHide={this.handleClose} bsSize="lg">
@@ -107,15 +129,125 @@ export default class DashBoard extends Component {
               </Modal.Footer>
             </Modal>
           )}
+          <Grid>
+            <Row>
+              <Col xs={6} md={6}>
+                <Image src={cp1} bsSize="small" responsive />
+              </Col>
+              <Col xs={6} md={6}>
+                <Image src={cp2} responsive />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={6} md={6}>
+                <Image src={cp3} bsSize="small" responsive />
+              </Col>
+              <Col xs={6} md={6}>
+                <Image src={cp4} responsive onClick={this.handleShow} />
+              </Col>
+            </Row>
+          </Grid>
           {this.state.recomend === true && (
-            <Panel bsStyle="success">
-              <Panel.Heading>
-                <Panel.Title componentClass="h1">Try this product</Panel.Title>
-              </Panel.Heading>
-              <Panel.Body>
-                <Image src={recommendation} responsive />
-              </Panel.Body>
-            </Panel>
+            <Modal
+              show={this.state.recomend}
+              onHide={this.handleAccountSetup}
+              bsSize="lg"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>recomended Investment</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Panel bsStyle="success">
+                  <Panel.Heading>
+                    <Panel.Title componentClass="h1">
+                      Try this product
+                    </Panel.Title>
+                  </Panel.Heading>
+                  <Panel.Body>
+                    <Image src={recommendation} responsive />
+                  </Panel.Body>
+                </Panel>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button onClick={this.handleAccountSetup} bsStyle="success">
+                  Continue
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          )}
+          {this.state.accountSetup === true && (
+            <Modal
+              show={this.state.accountSetup}
+              onHide={this.handlePaperwork}
+              bsSize="lg"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Account Setup</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Panel bsStyle="success">
+                  <Panel.Heading>
+                    <Panel.Title componentClass="h1">Account Setup</Panel.Title>
+                  </Panel.Heading>
+                  <Panel.Body>
+                    <Image src={accountSetup} responsive />
+                  </Panel.Body>
+                </Panel>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button onClick={this.handlePaperwork} bsStyle="success">
+                  Continue
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          )}
+          {this.state.paperwork === true && (
+            <Modal
+              show={this.state.paperwork}
+              onHide={this.handleEnd}
+              bsSize="lg"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Paperwork</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Panel bsStyle="success">
+                  <Panel.Heading>
+                    <Panel.Title componentClass="h1">Paperwork</Panel.Title>
+                  </Panel.Heading>
+                  <Panel.Body>
+                    <Image src={paperwork} responsive />
+                  </Panel.Body>
+                </Panel>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button onClick={this.handleLast} bsStyle="success">
+                  Generate
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          )}
+          {this.state.last === true && (
+            <Modal show={this.state.last} onHide={this.handleEnd} bsSize="lg">
+              <Modal.Header closeButton>
+                <Modal.Title>Done!</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Panel bsStyle="success">
+                  <Panel.Heading>
+                    <Panel.Title componentClass="h1">Done!</Panel.Title>
+                  </Panel.Heading>
+                  <Panel.Body>
+                    <Image src={last} responsive />
+                  </Panel.Body>
+                </Panel>
+              </Modal.Body>
+              <Modal.Footer>
+                {/* <Button onClick={this.handlePaperwork} bsStyle="success">
+                  Generate
+                </Button> */}
+              </Modal.Footer>
+            </Modal>
           )}
         </div>
       </div>
