@@ -10,7 +10,7 @@ import Product3 from "../static/images/Product 3.png";
 
 const styles = {
   root: {
-    width: 500
+    width: 800
   },
   slider: {
     padding: "22px 0px"
@@ -55,7 +55,7 @@ class SimpleSlider extends React.Component {
           </Panel.Body>
         </Panel>
         <Typography variant="h3" id="label">
-          Your Investment
+          Last year you saved $3000 !
         </Typography>
         <Slider
           classes={{ container: classes.slider }}

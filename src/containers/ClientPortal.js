@@ -59,46 +59,44 @@ export default class DashBoard extends Component {
           </Button>
           <div />
           {this.state.show === true && (
-            <Modal
-              show={this.state.show}
-              onHide={this.handleClose}
-              bsSize="big"
-            >
+            <Modal show={this.state.show} onHide={this.handleClose} bsSize="lg">
               <Modal.Header closeButton>
                 <Modal.Title>Tell us about yourself!</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <br />
-                1.Answer this question with a choice.
+                1. What is the investment time horizon on these investable
+                assets?
                 <br />
                 <ButtonToolbar>
-                  <ToggleButtonGroup type="checkbox">
-                    <ToggleButton value={1}>Checkbox 1</ToggleButton>
-                    <ToggleButton value={2}>Checkbox 2</ToggleButton>
-                    <ToggleButton value={3}>Checkbox 3</ToggleButton>
-                    <ToggleButton value={3}>Checkbox 3</ToggleButton>
+                  <ToggleButtonGroup type="radio" name="question1">
+                    <ToggleButton value={1}>Less than 3 years</ToggleButton>
+
+                    <ToggleButton value={2}>3 - 5 years</ToggleButton>
+                    <ToggleButton value={3}>6 - 9 years</ToggleButton>
+                    <ToggleButton value={4}>10+ years</ToggleButton>
                   </ToggleButtonGroup>
                 </ButtonToolbar>
                 <br />
-                1.Answer this question with a choice.
+                1.What is your current Annual Household Income?
                 <br />
                 <ButtonToolbar>
-                  <ToggleButtonGroup type="checkbox">
-                    <ToggleButton value={1}>Checkbox 1</ToggleButton>
-                    <ToggleButton value={2}>Checkbox 2</ToggleButton>
-                    <ToggleButton value={3}>Checkbox 3</ToggleButton>
-                    <ToggleButton value={3}>Checkbox 3</ToggleButton>
+                  <ToggleButtonGroup type="radio" name="question2">
+                    <ToggleButton value={1}>$0 - 30,000</ToggleButton>
+                    <ToggleButton value={2}>$30,001 - 50,000</ToggleButton>
+                    <ToggleButton value={3}>$50,001 - 100,000</ToggleButton>
+                    <ToggleButton value={4}>$100,001 - 250,000</ToggleButton>
                   </ToggleButtonGroup>
                 </ButtonToolbar>
                 <br />
-                1.Answer this question with a choice.
+                1.What is your Approximate Net Worth?
                 <br />
                 <ButtonToolbar>
-                  <ToggleButtonGroup type="checkbox">
-                    <ToggleButton value={1}>Checkbox 1</ToggleButton>
-                    <ToggleButton value={2}>Checkbox 2</ToggleButton>
-                    <ToggleButton value={3}>Checkbox 3</ToggleButton>
-                    <ToggleButton value={3}>Checkbox 3</ToggleButton>
+                  <ToggleButtonGroup type="radio" name="question3">
+                    <ToggleButton value={1}>Less than $250K</ToggleButton>
+                    <ToggleButton value={2}>$250 - 500K</ToggleButton>
+                    <ToggleButton value={3}>$500K - 1M</ToggleButton>
+                    <ToggleButton value={4}>$1M - 3M</ToggleButton>
                   </ToggleButtonGroup>
                 </ButtonToolbar>
               </Modal.Body>

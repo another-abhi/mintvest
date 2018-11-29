@@ -14,9 +14,7 @@ import {
 } from "react-bootstrap";
 import "./DashBoard.css";
 
-import Product1 from "../static/images/Product1.png";
 import SimpleSlider from "../components/MaterialSlider.js";
-import finapp from "../static/images/finapp.jpg";
 import panel1 from "../static/images/panel1.png";
 import panel2 from "../static/images/panel2.png";
 import panel3 from "../static/images/panel3.png";
@@ -54,7 +52,7 @@ export default class Finapp extends Component {
     return (
       <div className="img">
         <div className="Dashboard">
-          <Modal show={this.state.show} onHide={this.handleClose} bsSize="big">
+          <Modal show={this.state.show} onHide={this.handleClose} bsSize="lg">
             <Modal.Header closeButton>
               <Modal.Title>Want to Find Out More?</Modal.Title>
               <Button bsStyle="info" onClick={this.handleGo}>
